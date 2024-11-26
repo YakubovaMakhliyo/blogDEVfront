@@ -1,0 +1,255 @@
+/** @format */
+.close_btn {
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  cursor: pointer;
+  z-index: 9999999;
+}
+.login_bg {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9998;
+
+  &_active {
+    display: block;
+  }
+}
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: transform 0.1s linear;
+  transform: scale(0);
+  padding: 20px;
+
+  &_active {
+    transform: scale(1);
+  }
+
+  &_wrapper {
+    width: 600px;
+    height: 500px;
+    overflow-y: scroll;
+    padding: 15px;
+    padding-top: 75px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #fff;
+    border-radius: 20px;
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: gray;
+      border-radius: 50%;
+      border: 2px solid gray;
+    }
+    &_header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      padding-left: 75px;
+      width: 100%;
+    }
+  }
+  .logo {
+    margin: 0 auto;
+  }
+  h1 {
+    padding: 0 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    color: #000000;
+  }
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px;
+    input {
+      width: 100%;
+      padding: 23px 20px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      outline: none;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      color: #000000;
+      &::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+      }
+      &::-moz-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+      }
+      &:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+      }
+      &::-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+      }
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+    button {
+      padding: 18px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+      border: none;
+      color: #ffffff;
+      background-color: #1da1f2;
+      border-radius: 76px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      &:hover {
+        background-color: #008ce4;
+      }
+    }
+  }
+}
+
+.password_wrapper {
+  position: relative;
+  input {
+    padding-right: 70px !important;
+  }
+  i {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 23px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.errorWrapper {
+  text-align: center;
+  color: #000000;
+  font-weight: 700;
+}
+
+.tweetBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: start;
+  gap: 15px;
+  border-bottom: 1px solid rgba($color: gray, $alpha: 1);
+
+  &_body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &_textarea {
+      width: 100%;
+      outline: none;
+      resize: none;
+      border: none;
+      font-size: 21px;
+    }
+
+    &_actions {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 10px;
+      svg,
+      button {
+        cursor: pointer;
+      }
+      input {
+        display: none;
+      }
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
+
+.profile_avatar {
+  position: relative;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    z-index: 99;
+  }
+  i {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+  svg {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+
+    path {
+      fill: #fff;
+    }
+  }
+}
+.selectedFile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

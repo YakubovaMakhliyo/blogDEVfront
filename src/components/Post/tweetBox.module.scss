@@ -1,0 +1,124 @@
+/** @format */
+
+.tweetBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: start;
+  gap: 15px;
+  border-bottom: 1px solid rgba($color: gray, $alpha: 1);
+
+  &_body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &_textarea {
+      width: 100%;
+      outline: none;
+      resize: none;
+      border: none;
+      font-size: 21px;
+    }
+
+    &_actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      svg,
+      button {
+        cursor: pointer;
+      }
+      input {
+        display: none;
+      }
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+.modal {
+  padding: 15px;
+  position: fixed;
+  background-color: rgba($color: #242d34, $alpha: 0.5);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  display: none;
+  z-index: 9998;
+
+  &_active {
+    display: flex;
+  }
+}
+.close_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.tweetBoxModal {
+  margin-top: 150px;
+  background-color: #fff;
+  position: relative;
+  width: 600px;
+  height: 200px;
+  padding: 20px;
+  display: flex;
+  align-items: start;
+  gap: 15px;
+  border-bottom: 1px solid rgba($color: gray, $alpha: 1);
+  border-radius: 20px;
+
+  z-index: 9999;
+  transition: transform 0.1s linear;
+  transform: scale(0);
+
+  &_active {
+    transform: scale(1);
+  }
+
+  &_body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &_textarea {
+      width: 100%;
+      outline: none;
+      resize: none;
+      border: none;
+      font-size: 21px;
+    }
+
+    &_actions {
+      border-top: 1px solid rgba($color: #000000, $alpha: 0.4);
+      padding: 5px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+
+      svg,
+      button {
+        cursor: pointer;
+      }
+      input {
+        display: none;
+      }
+      svg {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}

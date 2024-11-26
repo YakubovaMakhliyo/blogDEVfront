@@ -1,0 +1,223 @@
+/** @format */
+
+@mixin forTablet {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin forMobile {
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}
+@mixin forMinMobile {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  height: 989px;
+  padding-top: 20px;
+  padding-right: 53px;
+  display: flex;
+  flex-direction: column;
+  @include forTablet() {
+    padding-right: 20px;
+  }
+
+  @include forMobile {
+    padding: 20px;
+  }
+
+  @include forMinMobile() {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    padding: 0;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(196, 196, 196, 1);
+    z-index: 999;
+  }
+}
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  @include forTablet() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @include forMinMobile() {
+    width: 100%;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    padding: 0;
+    flex-direction: row;
+  }
+}
+.logo {
+  width: 40px;
+  height: 33px;
+  margin-left: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include forTablet() {
+    width: 52px;
+    height: 52px;
+    margin-left: 0;
+  }
+
+  @include forMinMobile() {
+    display: none;
+  }
+}
+.menuForDesktop {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    li {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      padding: 12px;
+      display: flex;
+      gap: 20px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 24px;
+      color: #000000;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      &:hover {
+        border-radius: 15px;
+        background-color: #eff3f4;
+      }
+      img,
+      svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 28px;
+        height: 28px;
+        font-size: 25px;
+      }
+    }
+  }
+  @include forTablet() {
+    display: none;
+  }
+}
+.menuForTablet {
+  display: none;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    @include forMinMobile() {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    li {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      &:hover {
+        border-radius: 15px;
+        background-color: #eff3f4;
+      }
+      img,
+      svg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 28px;
+        height: 28px;
+        font-size: 25px;
+      }
+    }
+  }
+  @include forTablet() {
+    display: block;
+  }
+
+  @include forMinMobile() {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+.menuForMobile {
+  display: none;
+}
+
+.btnForDesktop {
+  margin-top: 30px;
+  width: 230px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  background: #1d9bf0;
+  border-radius: 27.5px;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background: #1288d6;
+  }
+
+  @include forTablet() {
+    display: none;
+  }
+}
+.btnForTablet {
+  display: none;
+  @include forTablet() {
+    display: flex;
+    width: 55px;
+    margin-top: 30px;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+    background: #1d9bf0;
+    border-radius: 27.5px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background: #1288d6;
+    }
+  }
+  @include forMinMobile() {
+    position: absolute;
+    top: -75px;
+    right: 25px;
+    margin-top: 0;
+    font-size: 24px;
+  }
+}
